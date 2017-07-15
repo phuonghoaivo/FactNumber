@@ -1,7 +1,10 @@
-<h2>Fact number </h2>
-
-<input [(ngModel)]="number" type="number">
-<button (click)="getFact()">GO!</button>
-
-<div>{{fact}}</div>
+<md-toolbar color="primary">Fact Number App</md-toolbar>
+<md-card>
+    <md-card-content>
+        <md-input-container style="width: 100%">
+            <input mdInput placeholder="Enter number..." [(ngModel)]="number" value="0">
+        </md-input-container>
+        <button md-button (click)="getFact()" color="primary">Click me!</button>
+    </md-card-content>
+</md-card>
 

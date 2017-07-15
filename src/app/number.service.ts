@@ -12,6 +12,9 @@ export class NumberService {
     }
 
     resolveFact(number: number, type: string) {
+        if (number == null) {
+            number = 0;
+        }
         const apiUrl = this.rootUrl + `${number}/${type}`;
         return new Promise(resolve => {
             this.http.get(apiUrl)
