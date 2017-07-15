@@ -1,10 +1,13 @@
 <md-toolbar color="primary">Fact Number App</md-toolbar>
 <md-card>
     <md-card-content>
-        <md-input-container style="width: 100%">
+        <md-input-container style="width: 100%; padding-bottom: 20px;">
             <input mdInput placeholder="Enter number..." [(ngModel)]="number" value="0">
         </md-input-container>
-        <button md-button (click)="getFact()" color="primary">Click me!</button>
+        <md-select style="width: 100%; padding-bottom: 20px;" placeholder="type" [(ngModel)]="myType">
+            <md-option *ngFor="let type of types"  [value]="type.code">{{ type.name }}</md-option>
+        </md-select>
+        <button md-button (click)="getFact()" style="background-color:#2ecc71; color: #fff">Try it out!</button>
     </md-card-content>
 </md-card>
 
