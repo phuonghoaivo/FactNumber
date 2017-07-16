@@ -40,10 +40,17 @@ export class AppComponent {
             this.fact = response as string;
             this.openDialog('Detail:', this.fact);
         })
-        .catch(error => this.handleException)
+            .catch(error => this.handleException)
     }
 
-    getType(): string {
+    randomNumber() {
+        const min = 0;
+        const max = 9999;
+        this.number = Math.floor(Math.random() * (max - min) + min);
+        console.log('[randomNumber] Number is: ', this.number);
+    }
+
+    private getType(): string {
         let type = null;
         this.types.forEach(element => {
             if (element.code === this.myType) {
@@ -53,13 +60,13 @@ export class AppComponent {
         return type;
     }
 
-    openDialog(title: string, message: string) {
+    private openDialog(title: string, message: string) {
         this.dialog.open(FactDetailComponent, {
             data: new FactResult(title, message)
         });
     }
 
-    handleException(error: any) {
+    private handleException(error: any) {
         console.log('Exception occurs: ', error);
         this.openDialog('Fact not found:', error.text());
     }

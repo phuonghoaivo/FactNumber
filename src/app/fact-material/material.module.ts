@@ -27,6 +27,7 @@ import {
   MdSlideToggleModule,
   MdSnackBarModule,
   MdTabsModule,
+  MdTableModule,
   MdToolbarModule,
   MdTooltipModule,
   OverlayModule
@@ -64,9 +65,10 @@ import {
     MdSlideToggleModule,
     MdSnackBarModule,
     MdTabsModule,
+    MdTableModule,
     MdToolbarModule,
     MdTooltipModule,
     OverlayModule
   ]
 })
-export class MaterialModule { }
+export class AppMaterialModule { }
